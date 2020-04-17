@@ -20,8 +20,15 @@ namespace LemonadeStand_3DayStarter
         {
             inventory = new Inventory();
             wallet = new Wallet();
+            name = AddName();
         }
 
         // member methods (CAN DO)
+        private string AddName()
+        {
+            Console.WriteLine("Please write your name");
+            string input = Console.ReadLine();
+            return input;
+        }
     }
 }
