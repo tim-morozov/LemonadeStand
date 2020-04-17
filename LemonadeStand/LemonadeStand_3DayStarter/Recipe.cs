@@ -8,5 +8,9 @@ namespace LemonadeStand_3DayStarter
 {
     class Recipe
     {
+        public int amountOfLemons;
+        public int amountOfSugarCubes;
+        public int amountOfIceCubes;
+        public double pricePerCup;
     }
 }
