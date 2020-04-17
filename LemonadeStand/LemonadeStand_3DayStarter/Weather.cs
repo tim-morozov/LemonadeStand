@@ -11,5 +11,10 @@ namespace LemonadeStand_3DayStarter
         public string condition;
         public int temperature;
         private List<string> weatherConditions;
+
+        public Weather()
+        {
+            weatherConditions = new List<string>() { "Sunny", "Rainy", "Cloudy", "Windy" };
+        }
     }
 }

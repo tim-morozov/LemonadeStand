@@ -24,6 +24,7 @@ namespace LemonadeStand_3DayStarter
         }
 
         // member methods (CAN DO)
+        //Gives the player a name based off of user input
         private string AddName()
         {
             Console.WriteLine("Please write your name");
