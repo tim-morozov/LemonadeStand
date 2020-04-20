@@ -16,9 +16,14 @@ namespace LemonadeStand_3DayStarter
         {
             weatherConditions = new List<string>() { "Sunny", "Rainy", "Cloudy", "Windy" };
             temperature = RandomGenerator(45, 99);
+            condition = ConditionGenerator();
         }
 
-        
+        private string ConditionGenerator()
+        {
+            int i = RandomGenerator(0, (weatherConditions.Count() - 1));
+            return weatherConditions[i];
+        }
 
         public int RandomGenerator(int min, int max)
         {
