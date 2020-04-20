@@ -29,5 +29,12 @@ namespace LemonadeStand_3DayStarter
             string customer = names[i];
             return customer;
         }
+
+        public virtual bool WillBuy(int temp, double price)
+        {
+            return true; 
+        }
+
+
     }
 }

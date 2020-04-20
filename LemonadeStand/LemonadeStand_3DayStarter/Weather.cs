@@ -15,7 +15,7 @@ namespace LemonadeStand_3DayStarter
         public Weather()
         {
             weatherConditions = new List<string>() { "Sunny", "Rainy", "Cloudy", "Windy" };
-            temperature = RandomGenerator(45, 99);
+            temperature = RandomGenerator(59, 99);
             condition = ConditionGenerator();
         }
 
