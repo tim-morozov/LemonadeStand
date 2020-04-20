@@ -15,8 +15,15 @@ namespace LemonadeStand_3DayStarter
 
         public Game()
         {
-            
+            player = new Player();   
 
+        }
+
+        public void RunGame()
+        {
+            Console.WriteLine("Welcome to Lemonade stand!");
+            player.DisplayInventory();
+            player.ChooseRecipe();
         }
 
     }
