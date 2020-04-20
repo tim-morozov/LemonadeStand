@@ -11,6 +11,13 @@ namespace LemonadeStand_3DayStarter
         private Player player;
         private List<Day> days;
         private int currentDay;
+        
+
+        public Game()
+        {
+            
+
+        }
 
     }
 }

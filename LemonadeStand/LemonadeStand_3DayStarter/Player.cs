@@ -21,6 +21,7 @@ namespace LemonadeStand_3DayStarter
             inventory = new Inventory();
             wallet = new Wallet();
             name = AddName();
+            
         }
 
         // member methods (CAN DO)
@@ -30,6 +31,19 @@ namespace LemonadeStand_3DayStarter
             Console.WriteLine("Please write your name");
             string input = Console.ReadLine();
             return input;
+        }
+
+        public void ChooseRecipe()
+        {
+            Console.WriteLine("Please choose your recipe");
+            Console.WriteLine("How many lemons?");
+            recipe.amountOfLemons = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("How much sugar?");
+            recipe.amountOfSugarCubes = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("How much ice?");
+            recipe.amountOfIceCubes = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Please set a price");
+            recipe.pricePerCup = Convert.ToDouble(Console.ReadLine());            
         }
     }
 }
