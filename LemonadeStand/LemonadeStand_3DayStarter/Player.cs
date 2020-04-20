@@ -45,5 +45,14 @@ namespace LemonadeStand_3DayStarter
             Console.WriteLine("Please set a price");
             recipe.pricePerCup = Convert.ToDouble(Console.ReadLine());            
         }
+
+        public void DisplayInventory()
+        {
+            Console.WriteLine("You currently have:");
+            Console.WriteLine("Lemons: " + inventory.lemons.Count);
+            Console.WriteLine("Sugar: " + inventory.sugarCubes.Count);
+            Console.WriteLine("Ice Cubes: " + inventory.iceCubes.Count);
+            Console.WriteLine("Cups: " + inventory.cups.Count);
+        }
     }
 }
