@@ -62,6 +62,15 @@ namespace LemonadeStand_3DayStarter
             pitcher.cupsLeftInPitcher = 6;
         }
 
+        public void DisplayRecipe(Recipe recipe)
+        {
+            Console.WriteLine("Your current recipe is: ");
+            Console.WriteLine("Lemons: " + recipe.amountOfLemons);
+            Console.WriteLine("Sugar: " + recipe.amountOfSugarCubes);
+            Console.WriteLine("Ice Cubes: " + recipe.amountOfIceCubes);
+            Console.WriteLine("Selling at: " + recipe.pricePerCup + " per cup");
+        }
+
         
     }
 }
