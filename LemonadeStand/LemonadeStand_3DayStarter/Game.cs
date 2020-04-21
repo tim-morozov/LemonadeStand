@@ -68,12 +68,14 @@ namespace LemonadeStand_3DayStarter
 
         private void DayGen()
         {
-
+            Day day = new Day();
+            days.Add(day);
         }
 
         private void RunDay()
         {
-
+            DayGen();
+            
         }
         public void RunGame()
         {
