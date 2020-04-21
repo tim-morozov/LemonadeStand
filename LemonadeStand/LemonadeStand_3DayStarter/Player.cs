@@ -54,5 +54,10 @@ namespace LemonadeStand_3DayStarter
             Console.WriteLine("Ice Cubes: " + inventory.iceCubes.Count);
             Console.WriteLine("Cups: " + inventory.cups.Count);
         }
+
+        public void RefillPitcher()
+        {
+            pitcher.cupsLeftInPitcher = 6;
+        }
     }
 }
