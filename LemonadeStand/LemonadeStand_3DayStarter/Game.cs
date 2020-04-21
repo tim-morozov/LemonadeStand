@@ -12,12 +12,15 @@ namespace LemonadeStand_3DayStarter
         private List<Day> days;
         private int currentDay;
         private Store store;
+        private int gameLength;
         
 
         public Game()
         {
             player = new Player();
             store = new Store();
+            gameLength = 7;
+            currentDay = 0;
 
         }
 
@@ -63,6 +66,15 @@ namespace LemonadeStand_3DayStarter
             }
         }
 
+        private void DayGen()
+        {
+
+        }
+
+        private void RunDay()
+        {
+
+        }
         public void RunGame()
         {
             Console.WriteLine("Welcome to Lemonade stand!");
