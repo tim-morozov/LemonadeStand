@@ -51,6 +51,16 @@ namespace LemonadeStand_3DayStarter
             {
                 GoToStore();
             }
+            else
+            {
+                Console.WriteLine("Would you like to go to the store? Y or N");
+                string input = Console.ReadLine();
+                input.ToLower();
+                if(input == "y")
+                {
+                    GoToStore();
+                }
+            }
         }
 
         public void RunGame()
