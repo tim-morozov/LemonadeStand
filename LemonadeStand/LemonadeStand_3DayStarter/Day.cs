@@ -24,24 +24,36 @@ namespace LemonadeStand_3DayStarter
             {
                 for (int i = 0; i <= 30; i++)
                 {
-                    Customer customer = new Customer();
-                    customers.Add(customer);
+                    Customer elderlyCustomer = new Elderly();
+                    Customer adultCustomer = new Adult();
+                    Customer childCustomer = new Child();
+                    customers.Add(elderlyCustomer);
+                    customers.Add(adultCustomer);
+                    customers.Add(childCustomer);
                 }
             }
             else if (weather.condition == "Rainy" || weather.temperature <= 60)
             {
                 for (int i = 0; i <= 10; i++)
                 {
-                    Customer customer = new Customer();
-                    customers.Add(customer);
+                    Customer elderlyCustomer = new Elderly();
+                    Customer adultCustomer = new Adult();
+                    Customer childCustomer = new Child();
+                    customers.Add(elderlyCustomer);
+                    customers.Add(adultCustomer);
+                    customers.Add(childCustomer);
                 }
             }
             else
             {
                 for(int i = 0; i <= 20; i++)
                 {
-                    Customer customer = new Customer();
-                    customers.Add(customer);
+                    Customer elderlyCustomer = new Elderly();
+                    Customer adultCustomer = new Adult();
+                    Customer childCustomer = new Child();
+                    customers.Add(elderlyCustomer);
+                    customers.Add(adultCustomer);
+                    customers.Add(childCustomer);
                 }
             }    
         }
