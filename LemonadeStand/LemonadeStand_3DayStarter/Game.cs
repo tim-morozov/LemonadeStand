@@ -67,7 +67,54 @@ namespace LemonadeStand_3DayStarter
                 }
             }
         }
+        private void EldSell()
+        {
+            foreach (Elderly elderlyCustomer in day.customers)
+            {
+                bool sale = elderlyCustomer.WillBuy(day.weather.temperature, player.recipe.pricePerCup);
+                if (sale == true)
+                {
+                    player.wallet.Money += player.recipe.pricePerCup;
+                }
+                else
+                {
+                    player.wallet.Money = player.wallet.Money;
+                }
+            }
+        }
 
+        private void AdSell()
+        {
+            foreach (Adult adultCustomer in day.customers)
+            {
+                bool sale = adultCustomer.WillBuy(day.weather.temperature, player.recipe.pricePerCup);
+                if (sale == true)
+                {
+                    player.wallet.Money += player.recipe.pricePerCup;
+                }
+                else
+                {
+                    player.wallet.Money = player.wallet.Money;
+                }
+            }
+        }
+
+        private void KidSell()
+        {
+            foreach (Child childCustomer in day.customers)
+            {
+                bool sale = childCustomer.WillBuy(day.weather.temperature, player.recipe.pricePerCup);
+                if (sale == true)
+                {
+                    player.wallet.Money += player.recipe.pricePerCup;
+                }
+                else
+                {
+                    player.wallet.Money = player.wallet.Money;
+                }
+            }
+
+        }
         private void DayGen()
         {
             Day day = new Day();
@@ -79,43 +126,11 @@ namespace LemonadeStand_3DayStarter
         {
             day.DisplayWeather(); 
             DayGen();
-            foreach(Elderly elderlyCustomer in day.customers)
-            {
-               bool sale = elderlyCustomer.WillBuy(day.weather.temperature, player.recipe.pricePerCup);
-                if(sale == true)
-                {
-                    player.wallet.Money += player.recipe.pricePerCup;
-                }
-                else
-                {
-                    player.wallet.Money = player.wallet.Money;
-                }
-            }
-            foreach(Adult adultCustomer in day.customers)
-            {
-                bool sale = adultCustomer.WillBuy(day.weather.temperature, player.recipe.pricePerCup);
-                if( sale == true)
-                {
-                    player.wallet.Money += player.recipe.pricePerCup;
-                }
-                else
-                {
-                    player.wallet.Money = player.wallet.Money;
-                }
-            }
-            foreach(Child childCustomer in day.customers)
-            {
-                bool sale = childCustomer.WillBuy(day.weather.temperature, player.recipe.pricePerCup);
-                if(sale == true)
-                {
-                    player.wallet.Money += player.recipe.pricePerCup;
-                }
-                else
-                {
-                    player.wallet.Money = player.wallet.Money;
-                }
-            }
-
+            EldSell();
+            AdSell();
+            KidSell();
+            
+           
         }
         public void RunGame()
         {
