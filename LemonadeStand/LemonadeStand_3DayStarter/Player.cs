@@ -81,6 +81,12 @@ namespace LemonadeStand_3DayStarter
                 item.RemoveAt(0);
             }
         }
-        
+        public void Sale()
+        {
+            InventoryRemove(inventory.lemons, recipe.amountOfLemons);
+            InventoryRemove(inventory.sugarCubes, recipe.amountOfSugarCubes);
+            InventoryRemove(inventory.iceCubes, recipe.amountOfIceCubes);
+            inventory.cups.RemoveAt(0);
+        }
     }
 }
