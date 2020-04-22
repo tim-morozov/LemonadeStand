@@ -9,7 +9,7 @@ namespace LemonadeStand_3DayStarter
     class Day
     {
         public Weather weather;
-        public List<List<Customer>> customers;
+        //public List<List<Customer>> customers;
         public List<Customer> eldCustomers;
         public List<Customer> adCustomers;
         public List<Customer> chCustomers;
@@ -18,7 +18,7 @@ namespace LemonadeStand_3DayStarter
         public Day()
         {
             weather = new Weather();
-            customers = new List<List<Customer>>();
+            //customers = new List<List<Customer>>();
             eldCustomers = new List<Customer>();
             adCustomers = new List<Customer>();
             chCustomers = new List<Customer>();

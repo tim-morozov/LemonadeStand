@@ -66,12 +66,13 @@ namespace LemonadeStand_3DayStarter
         }
         private void EldSell()
         {
-            foreach (Elderly elderlyCustomer in days[currentDay].customers[0])
+            foreach (Elderly elderlyCustomer in days[currentDay].eldCustomers)
             {
                 bool sale = elderlyCustomer.WillBuy(days[currentDay].weather.temperature, player.recipe.pricePerCup);
                 if (sale == true)
                 {
                     player.wallet.Money += player.recipe.pricePerCup;
+                    player.pitcher.cupsLeftInPitcher--;
                 }
                 else
                 {
@@ -82,12 +83,13 @@ namespace LemonadeStand_3DayStarter
 
         private void AdSell()
         {
-            foreach (Adult adultCustomer in days[currentDay].customers[1])
+            foreach (Adult adultCustomer in days[currentDay].adCustomers)
             {
                 bool sale = adultCustomer.WillBuy(days[currentDay].weather.temperature, player.recipe.pricePerCup);
                 if (sale == true)
                 {
                     player.wallet.Money += player.recipe.pricePerCup;
+                    player.pitcher.cupsLeftInPitcher--;
                 }
                 else
                 {
@@ -98,12 +100,13 @@ namespace LemonadeStand_3DayStarter
 
         private void KidSell()
         {
-            foreach (Child childCustomer in days[currentDay].customers[2])
+            foreach (Child childCustomer in days[currentDay].chCustomers)
             {
                 bool sale = childCustomer.WillBuy(days[currentDay].weather.temperature, player.recipe.pricePerCup);
                 if (sale == true)
                 {
                     player.wallet.Money += player.recipe.pricePerCup;
+                    player.pitcher.cupsLeftInPitcher--;
                 }
                 else
                 {
