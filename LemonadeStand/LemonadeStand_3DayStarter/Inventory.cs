@@ -9,18 +9,18 @@ namespace LemonadeStand_3DayStarter
     class Inventory
     {
         // member variables (HAS A)
-        public List<Lemon> lemons;
-        public List<SugarCube> sugarCubes;
-        public List<IceCube> iceCubes;
-        public List<Cup> cups;
+        public List<Item> lemons;
+        public List<Item> sugarCubes;
+        public List<Item> iceCubes;
+        public List<Item> cups;
 
         // constructor (SPAWNER)
         public Inventory()
         {
-            lemons = new List<Lemon>();
-            sugarCubes = new List<SugarCube>();
-            iceCubes = new List<IceCube>();
-            cups = new List<Cup>();
+            lemons = new List<Item>();
+            sugarCubes = new List<Item>();
+            iceCubes = new List<Item>();
+            cups = new List<Item>();
         }
 
         // member methods (CAN DO)
@@ -59,5 +59,6 @@ namespace LemonadeStand_3DayStarter
                 cups.Add(cup);
             }
         }
+        
     }
 }

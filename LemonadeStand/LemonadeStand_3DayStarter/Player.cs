@@ -40,12 +40,15 @@ namespace LemonadeStand_3DayStarter
             Console.WriteLine("Please choose your recipe");
             Console.WriteLine("How many lemons?");
             recipe.amountOfLemons = Convert.ToInt32(Console.ReadLine());
+            InventoryRemove(inventory.lemons, recipe.amountOfLemons);
             Console.WriteLine("How much sugar?");
             recipe.amountOfSugarCubes = Convert.ToInt32(Console.ReadLine());
+            InventoryRemove(inventory.sugarCubes, recipe.amountOfSugarCubes);
             Console.WriteLine("How much ice?");
             recipe.amountOfIceCubes = Convert.ToInt32(Console.ReadLine());
+            InventoryRemove(inventory.iceCubes, recipe.amountOfIceCubes);
             Console.WriteLine("Please set a price");
-            recipe.pricePerCup = Convert.ToDouble(Console.ReadLine());            
+            recipe.pricePerCup = Convert.ToDouble(Console.ReadLine());
         }
 
         public void DisplayInventory()
@@ -71,7 +74,13 @@ namespace LemonadeStand_3DayStarter
             Console.WriteLine("Ice Cubes: " + recipe.amountOfIceCubes);
             Console.WriteLine("Selling at: " + recipe.pricePerCup + " per cup");
         }
-
+        private void InventoryRemove(List<Item> item, int quant)
+        {
+            for(int i = 0; i <= quant; i++)
+            {
+                item.RemoveAt(0);
+            }
+        }
         
     }
 }
