@@ -27,7 +27,7 @@ namespace LemonadeStand_3DayStarter
 
         public void DisplayWeather()
         {
-            Console.WriteLine("The weather is " + weather.condition + "and the temperature is " + weather.temperature);
+            Console.WriteLine("The weather is " + weather.condition + " and the temperature is " + weather.temperature);
         }
         public void CustomerGenerator()
         {
@@ -67,9 +67,9 @@ namespace LemonadeStand_3DayStarter
                     chCustomers.Add(childCustomer);
                 }
             }
-            customers.Add(eldCustomers);
-            customers.Add(adCustomers);
-            customers.Add(chCustomers);
+            //customers.Add(eldCustomers);
+            //customers.Add(adCustomers);
+            //customers.Add(chCustomers);
         }
     }
 }

@@ -129,16 +129,32 @@ namespace LemonadeStand_3DayStarter
             InventoryValidate();
             player.DisplayInventory();
             player.ChooseRecipe();
-            EldSell();
-            AdSell();
-            KidSell();
-            
+            while (player.inventory.lemons.Count > 0 && player.inventory.sugarCubes.Count > 0 && player.inventory.iceCubes.Count > 0 && player.inventory.cups.Count > 0)
+            {
+                EldSell();
+                if (player.inventory.lemons.Count > 0 && player.inventory.sugarCubes.Count > 0 && player.inventory.iceCubes.Count > 0 && player.inventory.cups.Count > 0)
+                {
+                    Console.WriteLine("Sold Out!");
+                    break;
+                }
+                else
+                {
+                    AdSell();
+                }
+                if(player.inventory.lemons.Count > 0 && player.inventory.sugarCubes.Count > 0 && player.inventory.iceCubes.Count > 0 && player.inventory.cups.Count > 0)
+                {
+                    Console.WriteLine("Sold Out");
+                    break;
+                }
+                KidSell();
+            }
            
         }
         public void RunGame()
         {
             Console.WriteLine("Welcome to Lemonade stand!");
-            RunDay();    
+            RunDay();
+            DayGen();
         }
 
     }
