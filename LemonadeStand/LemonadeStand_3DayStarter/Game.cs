@@ -66,7 +66,7 @@ namespace LemonadeStand_3DayStarter
         }
         private void EldSell()
         {
-            foreach (Elderly elderlyCustomer in days[currentDay].customers)
+            foreach (Elderly elderlyCustomer in days[currentDay].customers[0])
             {
                 bool sale = elderlyCustomer.WillBuy(days[currentDay].weather.temperature, player.recipe.pricePerCup);
                 if (sale == true)
@@ -82,7 +82,7 @@ namespace LemonadeStand_3DayStarter
 
         private void AdSell()
         {
-            foreach (Adult adultCustomer in days[currentDay].customers)
+            foreach (Adult adultCustomer in days[currentDay].customers[1])
             {
                 bool sale = adultCustomer.WillBuy(days[currentDay].weather.temperature, player.recipe.pricePerCup);
                 if (sale == true)
@@ -98,7 +98,7 @@ namespace LemonadeStand_3DayStarter
 
         private void KidSell()
         {
-            foreach (Child childCustomer in days[currentDay].customers)
+            foreach (Child childCustomer in days[currentDay].customers[2])
             {
                 bool sale = childCustomer.WillBuy(days[currentDay].weather.temperature, player.recipe.pricePerCup);
                 if (sale == true)
@@ -124,8 +124,8 @@ namespace LemonadeStand_3DayStarter
             days[currentDay].DisplayWeather();
             player.DisplayInventory();
             InventoryValidate();
+            player.DisplayInventory();
             player.ChooseRecipe();
-            DayGen();
             EldSell();
             AdSell();
             KidSell();

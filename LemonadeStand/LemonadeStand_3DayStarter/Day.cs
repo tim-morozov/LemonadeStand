@@ -9,13 +9,19 @@ namespace LemonadeStand_3DayStarter
     class Day
     {
         public Weather weather;
-        public List<Customer> customers;
+        public List<List<Customer>> customers;
+        public List<Customer> eldCustomers;
+        public List<Customer> adCustomers;
+        public List<Customer> chCustomers;
         
 
         public Day()
         {
             weather = new Weather();
-            customers = new List<Customer>();
+            customers = new List<List<Customer>>();
+            eldCustomers = new List<Customer>();
+            adCustomers = new List<Customer>();
+            chCustomers = new List<Customer>();
             CustomerGenerator();
         }
 
@@ -32,9 +38,9 @@ namespace LemonadeStand_3DayStarter
                     Customer elderlyCustomer = new Elderly();
                     Customer adultCustomer = new Adult();
                     Customer childCustomer = new Child();
-                    customers.Add(elderlyCustomer);
-                    customers.Add(adultCustomer);
-                    customers.Add(childCustomer);
+                    eldCustomers.Add(elderlyCustomer);
+                    adCustomers.Add(adultCustomer);
+                    chCustomers.Add(childCustomer);
                 }
             }
             else if (weather.condition == "Rainy" || weather.temperature <= 60)
@@ -44,9 +50,9 @@ namespace LemonadeStand_3DayStarter
                     Customer elderlyCustomer = new Elderly();
                     Customer adultCustomer = new Adult();
                     Customer childCustomer = new Child();
-                    customers.Add(elderlyCustomer);
-                    customers.Add(adultCustomer);
-                    customers.Add(childCustomer);
+                    eldCustomers.Add(elderlyCustomer);
+                    adCustomers.Add(adultCustomer);
+                    chCustomers.Add(childCustomer);
                 }
             }
             else
@@ -56,11 +62,14 @@ namespace LemonadeStand_3DayStarter
                     Customer elderlyCustomer = new Elderly();
                     Customer adultCustomer = new Adult();
                     Customer childCustomer = new Child();
-                    customers.Add(elderlyCustomer);
-                    customers.Add(adultCustomer);
-                    customers.Add(childCustomer);
+                    eldCustomers.Add(elderlyCustomer);
+                    adCustomers.Add(adultCustomer);
+                    chCustomers.Add(childCustomer);
                 }
-            }    
+            }
+            customers.Add(eldCustomers);
+            customers.Add(adCustomers);
+            customers.Add(chCustomers);
         }
     }
 }
