@@ -81,7 +81,7 @@ namespace LemonadeStand_3DayStarter
             DayGen();
             foreach(Elderly elderlyCustomer in day.customers)
             {
-               bool sale = elderlyCustomer.WillBuy(day.weather.temperature, day.weather.temperature);
+               bool sale = elderlyCustomer.WillBuy(day.weather.temperature, player.recipe.pricePerCup);
                 if(sale == true)
                 {
                     player.wallet.Money += player.recipe.pricePerCup;
@@ -93,7 +93,27 @@ namespace LemonadeStand_3DayStarter
             }
             foreach(Adult adultCustomer in day.customers)
             {
-                bool sale = adultCustomer
+                bool sale = adultCustomer.WillBuy(day.weather.temperature, player.recipe.pricePerCup);
+                if( sale == true)
+                {
+                    player.wallet.Money += player.recipe.pricePerCup;
+                }
+                else
+                {
+                    player.wallet.Money = player.wallet.Money;
+                }
+            }
+            foreach(Child childCustomer in day.customers)
+            {
+                bool sale = childCustomer.WillBuy(day.weather.temperature, player.recipe.pricePerCup);
+                if(sale == true)
+                {
+                    player.wallet.Money += player.recipe.pricePerCup;
+                }
+                else
+                {
+                    player.wallet.Money = player.wallet.Money;
+                }
             }
 
         }
