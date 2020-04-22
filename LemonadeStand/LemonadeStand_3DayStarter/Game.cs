@@ -29,13 +29,9 @@ namespace LemonadeStand_3DayStarter
 
         private void GoToStore()
         {
-            UserInterface.GetNumberOfItems("lemons");
             store.SellLemons(player);
-            UserInterface.GetNumberOfItems("sugar");
             store.SellSugarCubes(player);
-            UserInterface.GetNumberOfItems("ice cubes");
             store.SellIceCubes(player);
-            UserInterface.GetNumberOfItems("Cups");
             store.SellIceCubes(player);
         }
 
