@@ -71,12 +71,15 @@ namespace LemonadeStand_3DayStarter
                 bool sale = elderlyCustomer.WillBuy(days[currentDay].weather.temperature, player.recipe.pricePerCup);
                 if (sale == true)
                 {
-                    player.wallet.Money += player.recipe.pricePerCup;
-                    player.pitcher.cupsLeftInPitcher--;
+                    player.Sale();
+                    if(player.pitcher.cupsLeftInPitcher <= 0)
+                    {
+                        player.RefillPitcher();
+                    }
                 }
                 else
                 {
-                    player.wallet.Money = player.wallet.Money;
+                    player.wallet.profit = player.wallet.profit;
                 }
             }
         }
@@ -88,12 +91,15 @@ namespace LemonadeStand_3DayStarter
                 bool sale = adultCustomer.WillBuy(days[currentDay].weather.temperature, player.recipe.pricePerCup);
                 if (sale == true)
                 {
-                    player.wallet.Money += player.recipe.pricePerCup;
-                    player.pitcher.cupsLeftInPitcher--;
+                    player.Sale();
+                    if (player.pitcher.cupsLeftInPitcher <= 0)
+                    {
+                        player.RefillPitcher();
+                    }
                 }
                 else
                 {
-                    player.wallet.Money = player.wallet.Money;
+                    player.wallet.profit = player.wallet.profit;
                 }
             }
         }
@@ -105,12 +111,15 @@ namespace LemonadeStand_3DayStarter
                 bool sale = childCustomer.WillBuy(days[currentDay].weather.temperature, player.recipe.pricePerCup);
                 if (sale == true)
                 {
-                    player.wallet.Money += player.recipe.pricePerCup;
-                    player.pitcher.cupsLeftInPitcher--;
+                    player.Sale();
+                    if (player.pitcher.cupsLeftInPitcher <= 0)
+                    {
+                        player.RefillPitcher();
+                    }
                 }
                 else
                 {
-                    player.wallet.Money = player.wallet.Money;
+                    player.wallet.profit = player.wallet.profit;
                 }
             }
 

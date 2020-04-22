@@ -9,7 +9,8 @@ namespace LemonadeStand_3DayStarter
     class Wallet
     {
         private double money;
-
+        public double profit;
+        public double loss;
         public double Money
         {
             get
@@ -25,6 +26,7 @@ namespace LemonadeStand_3DayStarter
         public Wallet()
         {
             money = 20.00;
+            profit = 0;
         }
 
         public void PayMoneyForItems(double transactionAmount)

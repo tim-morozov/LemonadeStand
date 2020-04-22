@@ -63,6 +63,9 @@ namespace LemonadeStand_3DayStarter
 
         public void RefillPitcher()
         {
+            InventoryRemove(inventory.lemons, recipe.amountOfLemons);
+            InventoryRemove(inventory.sugarCubes, recipe.amountOfSugarCubes);
+            InventoryRemove(inventory.iceCubes, recipe.amountOfIceCubes);
             pitcher.cupsLeftInPitcher = 6;
         }
 
@@ -83,9 +86,8 @@ namespace LemonadeStand_3DayStarter
         }
         public void Sale()
         {
-            InventoryRemove(inventory.lemons, recipe.amountOfLemons);
-            InventoryRemove(inventory.sugarCubes, recipe.amountOfSugarCubes);
-            InventoryRemove(inventory.iceCubes, recipe.amountOfIceCubes);
+            wallet.profit += recipe.pricePerCup;
+            pitcher.cupsLeftInPitcher--;
             inventory.cups.RemoveAt(0);
         }
     }
