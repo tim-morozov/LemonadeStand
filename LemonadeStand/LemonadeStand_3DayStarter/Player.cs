@@ -55,6 +55,7 @@ namespace LemonadeStand_3DayStarter
             Console.WriteLine("Sugar: " + inventory.sugarCubes.Count);
             Console.WriteLine("Ice Cubes: " + inventory.iceCubes.Count);
             Console.WriteLine("Cups: " + inventory.cups.Count);
+            Console.WriteLine("You have $" + wallet.Money);
         }
 
         public void RefillPitcher()
