@@ -32,7 +32,7 @@ namespace LemonadeStand_3DayStarter
             store.SellLemons(player);
             store.SellSugarCubes(player);
             store.SellIceCubes(player);
-            store.SellIceCubes(player);
+            store.SellCups(player);
         }
 
         private void InventoryValidate()
@@ -153,8 +153,12 @@ namespace LemonadeStand_3DayStarter
         public void RunGame()
         {
             Console.WriteLine("Welcome to Lemonade stand!");
-            RunDay();
-            DayGen();
+            while (currentDay < gameLength)
+            {
+                RunDay();
+                DayGen();
+                currentDay++;
+            }
         }
 
     }
