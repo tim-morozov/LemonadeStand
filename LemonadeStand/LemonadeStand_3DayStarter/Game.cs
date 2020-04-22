@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -156,6 +157,7 @@ namespace LemonadeStand_3DayStarter
                     break;
                 }
                 KidSell();
+                player.wallet.Money += player.wallet.profit;
             }
            
         }
