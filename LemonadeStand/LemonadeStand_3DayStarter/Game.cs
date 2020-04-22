@@ -13,6 +13,7 @@ namespace LemonadeStand_3DayStarter
         private int currentDay;
         private Store store;
         private int gameLength;
+        Day day = new Day();
         
 
         public Game()
@@ -21,7 +22,8 @@ namespace LemonadeStand_3DayStarter
             store = new Store();
             gameLength = 7;
             currentDay = 0;
-
+            days = new List<Day>();
+            days.Add(day);
         }
 
         private void GoToStore()
@@ -70,12 +72,29 @@ namespace LemonadeStand_3DayStarter
         {
             Day day = new Day();
             days.Add(day);
+            currentDay++;
         }
 
         private void RunDay()
         {
+            day.DisplayWeather(); 
             DayGen();
-            days. 
+            foreach(Elderly elderlyCustomer in day.customers)
+            {
+               bool sale = elderlyCustomer.WillBuy(day.weather.temperature, day.weather.temperature);
+                if(sale == true)
+                {
+                    player.wallet.Money += player.recipe.pricePerCup;
+                }
+                else
+                {
+                    player.wallet.Money = player.wallet.Money;
+                }
+            }
+            foreach(Adult adultCustomer in day.customers)
+            {
+                bool sale = adultCustomer
+            }
 
         }
         public void RunGame()
