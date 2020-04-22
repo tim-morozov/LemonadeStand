@@ -75,7 +75,8 @@ namespace LemonadeStand_3DayStarter
         private void RunDay()
         {
             DayGen();
-            
+            days. 
+
         }
         public void RunGame()
         {

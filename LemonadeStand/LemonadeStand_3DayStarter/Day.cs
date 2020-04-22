@@ -16,9 +16,14 @@ namespace LemonadeStand_3DayStarter
         {
             weather = new Weather();
             customers = new List<Customer>();
+            CustomerGenerator();
         }
 
-        private void CustomerGenerator()
+        public void DisplayWeather()
+        {
+            Console.WriteLine("The weather is " + weather.condition + "and the temperature is " + weather.temperature);
+        }
+        public void CustomerGenerator()
         {
             if (weather.condition == "Sunny" || weather.temperature >= 80)
             {
