@@ -124,7 +124,10 @@ namespace LemonadeStand_3DayStarter
 
         private void RunDay()
         {
-            day.DisplayWeather(); 
+            day.DisplayWeather();
+            player.DisplayInventory();
+            InventoryValidate();
+            player.ChooseRecipe();
             DayGen();
             EldSell();
             AdSell();
@@ -135,9 +138,7 @@ namespace LemonadeStand_3DayStarter
         public void RunGame()
         {
             Console.WriteLine("Welcome to Lemonade stand!");
-            player.DisplayInventory();
-            InventoryValidate();
-            player.ChooseRecipe();
+            RunDay();    
         }
 
     }
