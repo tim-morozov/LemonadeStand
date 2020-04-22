@@ -13,7 +13,7 @@ namespace LemonadeStand_3DayStarter
         private int currentDay;
         private Store store;
         private int gameLength;
-        Day day = new Day();
+        //Day day = new Day();
         
 
         public Game()
@@ -23,7 +23,8 @@ namespace LemonadeStand_3DayStarter
             gameLength = 7;
             currentDay = 0;
             days = new List<Day>();
-            days.Add(day);
+            //days.Add(day);
+            DayGen();
         }
 
         private void GoToStore()
@@ -69,9 +70,9 @@ namespace LemonadeStand_3DayStarter
         }
         private void EldSell()
         {
-            foreach (Elderly elderlyCustomer in day.customers)
+            foreach (Elderly elderlyCustomer in days[currentDay].customers)
             {
-                bool sale = elderlyCustomer.WillBuy(day.weather.temperature, player.recipe.pricePerCup);
+                bool sale = elderlyCustomer.WillBuy(days[currentDay].weather.temperature, player.recipe.pricePerCup);
                 if (sale == true)
                 {
                     player.wallet.Money += player.recipe.pricePerCup;
@@ -85,9 +86,9 @@ namespace LemonadeStand_3DayStarter
 
         private void AdSell()
         {
-            foreach (Adult adultCustomer in day.customers)
+            foreach (Adult adultCustomer in days[currentDay].customers)
             {
-                bool sale = adultCustomer.WillBuy(day.weather.temperature, player.recipe.pricePerCup);
+                bool sale = adultCustomer.WillBuy(days[currentDay].weather.temperature, player.recipe.pricePerCup);
                 if (sale == true)
                 {
                     player.wallet.Money += player.recipe.pricePerCup;
@@ -101,9 +102,9 @@ namespace LemonadeStand_3DayStarter
 
         private void KidSell()
         {
-            foreach (Child childCustomer in day.customers)
+            foreach (Child childCustomer in days[currentDay].customers)
             {
-                bool sale = childCustomer.WillBuy(day.weather.temperature, player.recipe.pricePerCup);
+                bool sale = childCustomer.WillBuy(days[currentDay].weather.temperature, player.recipe.pricePerCup);
                 if (sale == true)
                 {
                     player.wallet.Money += player.recipe.pricePerCup;
@@ -119,12 +120,12 @@ namespace LemonadeStand_3DayStarter
         {
             Day day = new Day();
             days.Add(day);
-            currentDay++;
+            //currentDay++;
         }
 
         private void RunDay()
         {
-            day.DisplayWeather();
+            days[currentDay].DisplayWeather();
             player.DisplayInventory();
             InventoryValidate();
             player.ChooseRecipe();
