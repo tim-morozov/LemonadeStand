@@ -10,7 +10,7 @@ namespace LemonadeStand_3DayStarter
     {
         public override bool WillBuy(int temp, double price)
         {
-            if (temp >= 70 || price <= .5)
+            if (temp >= 70 || price <= .75)
             {
                 return true;
             }
