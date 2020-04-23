@@ -79,7 +79,7 @@ namespace LemonadeStand_3DayStarter
         }
         private void InventoryRemove(List<Item> item, int quant)
         {
-            for(int i = 0; i <= quant; i++)
+            for(int i = 0; i <= quant - 1; i++)
             {
                 item.RemoveAt(0);
             }
@@ -89,6 +89,18 @@ namespace LemonadeStand_3DayStarter
             wallet.profit += recipe.pricePerCup;
             pitcher.cupsLeftInPitcher--;
             inventory.cups.RemoveAt(0);
+        }
+        public bool CheckInventory()
+        {
+            if (inventory.lemons.Count > 0 && inventory.sugarCubes.Count > 0 && inventory.iceCubes.Count > 0 && inventory.cups.Count > 0)
+            {
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("Sold Out!");
+                return false;
+            }
         }
     }
 }

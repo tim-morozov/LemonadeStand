@@ -27,7 +27,13 @@ namespace LemonadeStand_3DayStarter
             //days.Add(day);
             DayGen();
         }
-
+        private void CheckPitcher()
+        {
+            if (player.pitcher.cupsLeftInPitcher <= 0)
+            {
+                player.RefillPitcher();
+            }
+        }
         private void GoToStore()
         {
             store.SellLemons(player);
@@ -72,15 +78,16 @@ namespace LemonadeStand_3DayStarter
                 bool sale = elderlyCustomer.WillBuy(days[currentDay].weather.temperature, player.recipe.pricePerCup);
                 if (sale == true)
                 {
-                    player.Sale();
-                    if(player.pitcher.cupsLeftInPitcher <= 0)
+                    bool input = player.CheckInventory();
+                    if(input == true)
                     {
-                        player.RefillPitcher();
+                        player.Sale();
                     }
-                }
-                else
-                {
-                    player.wallet.profit = player.wallet.profit;
+                    else
+                    {
+                        break;
+                    }
+                    CheckPitcher();
                 }
             }
         }
@@ -92,15 +99,16 @@ namespace LemonadeStand_3DayStarter
                 bool sale = adultCustomer.WillBuy(days[currentDay].weather.temperature, player.recipe.pricePerCup);
                 if (sale == true)
                 {
-                    player.Sale();
-                    if (player.pitcher.cupsLeftInPitcher <= 0)
+                    bool input = player.CheckInventory();
+                    if (input == true)
                     {
-                        player.RefillPitcher();
+                        player.Sale();
                     }
-                }
-                else
-                {
-                    player.wallet.profit = player.wallet.profit;
+                    else
+                    {
+                        break;
+                    }
+                    CheckPitcher();
                 }
             }
         }
@@ -112,15 +120,16 @@ namespace LemonadeStand_3DayStarter
                 bool sale = childCustomer.WillBuy(days[currentDay].weather.temperature, player.recipe.pricePerCup);
                 if (sale == true)
                 {
-                    player.Sale();
-                    if (player.pitcher.cupsLeftInPitcher <= 0)
+                    bool input = player.CheckInventory();
+                    if (input == true)
                     {
-                        player.RefillPitcher();
+                        player.Sale();
                     }
-                }
-                else
-                {
-                    player.wallet.profit = player.wallet.profit;
+                    else
+                    {
+                        break;
+                    }
+                    CheckPitcher();
                 }
             }
 
@@ -129,6 +138,7 @@ namespace LemonadeStand_3DayStarter
         {
             Day day = new Day();
             days.Add(day);
+            player.wallet.profit = 0;
             //currentDay++;
         }
 
@@ -142,24 +152,20 @@ namespace LemonadeStand_3DayStarter
             while (player.inventory.lemons.Count > 0 && player.inventory.sugarCubes.Count > 0 && player.inventory.iceCubes.Count > 0 && player.inventory.cups.Count > 0)
             {
                 EldSell();
-                if (player.inventory.lemons.Count > 0 && player.inventory.sugarCubes.Count > 0 && player.inventory.iceCubes.Count > 0 && player.inventory.cups.Count > 0)
-                {
-                    Console.WriteLine("Sold Out!");
-                    break;
-                }
-                else
+                bool input = player.CheckInventory();
+                if (input == true)
                 {
                     AdSell();
                 }
-                if(player.inventory.lemons.Count > 0 && player.inventory.sugarCubes.Count > 0 && player.inventory.iceCubes.Count > 0 && player.inventory.cups.Count > 0)
+                else
                 {
-                    Console.WriteLine("Sold Out");
                     break;
                 }
                 KidSell();
-                player.wallet.Money += player.wallet.profit;
+                
             }
-           
+            player.wallet.Money += player.wallet.profit;
+            Console.WriteLine("You made $" + player.wallet.profit + " today!");
         }
         public void RunGame()
         {
