@@ -27,6 +27,11 @@ namespace LemonadeStand_3DayStarter
             //days.Add(day);
             DayGen();
         }
+        private void DisplayScore(double finalMoney)
+        {
+            double totalProfit = finalMoney - 20;
+            Console.WriteLine(totalProfit);
+        }
         private void CheckPitcher()
         {
             if (player.pitcher.cupsLeftInPitcher <= 0)
@@ -176,6 +181,7 @@ namespace LemonadeStand_3DayStarter
                 DayGen();
                 currentDay++;
             }
+            DisplayScore(player.wallet.Money);
         }
 
     }
