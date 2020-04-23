@@ -67,9 +67,6 @@ namespace LemonadeStand_3DayStarter
                     chCustomers.Add(childCustomer);
                 }
             }
-            //customers.Add(eldCustomers);
-            //customers.Add(adCustomers);
-            //customers.Add(chCustomers);
         }
     }
 }

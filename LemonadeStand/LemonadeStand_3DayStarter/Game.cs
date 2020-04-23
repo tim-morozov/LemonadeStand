@@ -14,7 +14,6 @@ namespace LemonadeStand_3DayStarter
         private int currentDay;
         private Store store;
         private int gameLength;
-        //Day day = new Day();
         
 
         public Game()
@@ -24,7 +23,6 @@ namespace LemonadeStand_3DayStarter
             gameLength = 7;
             currentDay = 0;
             days = new List<Day>();
-            //days.Add(day);
             DayGen();
         }
         private void DisplayScore(double finalMoney)
@@ -144,7 +142,7 @@ namespace LemonadeStand_3DayStarter
             Day day = new Day();
             days.Add(day);
             player.wallet.profit = 0;
-            //currentDay++;
+            
         }
 
         private void RunDay()

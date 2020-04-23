@@ -10,7 +10,6 @@ namespace LemonadeStand_3DayStarter
     {
         private double money;
         public double profit;
-        public double loss;
         public double Money
         {
             get
