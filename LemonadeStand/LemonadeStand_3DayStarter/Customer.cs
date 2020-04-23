@@ -12,6 +12,6 @@ namespace LemonadeStand_3DayStarter
         {
             
         }
-        public abstract bool WillBuy(int temp, double price);
+        public abstract bool WillBuy(int temp, double price); //Used 
     }
 }

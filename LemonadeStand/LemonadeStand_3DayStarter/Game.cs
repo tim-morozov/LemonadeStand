@@ -175,7 +175,7 @@ namespace LemonadeStand_3DayStarter
             Console.WriteLine("Welcome to Lemonade stand!");
             while (currentDay < gameLength)
             {
-                RunDay();
+                RunDay();                                  //Used single responsiblity here by using several smaller methods to operate a larger one                                                         //to operate a larger one 
                 DayGen();
                 currentDay++;
             }

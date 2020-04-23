@@ -78,7 +78,8 @@ namespace LemonadeStand_3DayStarter
         }
         private void InventoryRemove(List<Item> item, int quant)
         {
-            for(int i = 0; i <= quant - 1; i++)
+            for(int i = 0; i <= quant - 1; i++)            //Open/Closed was used here because I can, and did use this piece of code
+                                                          //several times in this application
             {
                 item.RemoveAt(0);
             }
@@ -86,7 +87,7 @@ namespace LemonadeStand_3DayStarter
         public void Sale()
         {
             wallet.profit += recipe.pricePerCup;
-            pitcher.cupsLeftInPitcher--;
+            pitcher.cupsLeftInPitcher--;                
             inventory.cups.RemoveAt(0);
         }
         public bool CheckInventory()
